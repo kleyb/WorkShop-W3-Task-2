@@ -56,7 +56,7 @@ void addWord(std::string word, vector<string> *wordList)
             frequency.at(newWord)++;
             break;
         }
-        else if (frequency.find(newWord) == frequency.end()) //tries to find newWord and check if it is equal the last
+        else if (frequency.find(newWord) == frequency.end()) //tries to find newWord at frequency map and check if it is equal the last
         {
             frequency.insert(pair<string, int>(newWord, 1));
             //break;
