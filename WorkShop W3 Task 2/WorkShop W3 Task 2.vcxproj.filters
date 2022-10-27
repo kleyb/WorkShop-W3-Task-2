@@ -23,5 +23,8 @@
     <ClInclude Include="WorkShop W3 Task 2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AnalyseDocument.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
