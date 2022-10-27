@@ -68,10 +68,6 @@ void addWord(std::string word, vector<string> *wordList)
     //numberOfWords++;
 }
 
-void analyseDocument() {
-
-}
-
 
 void updateSentenceCount(std::string& text, int* i)
 {
@@ -81,10 +77,9 @@ void updateSentenceCount(std::string& text, int* i)
     }
 }
 
-int main()
+void analyseDocument()
 {
     vector<string> wordList;
-
     string filename = "input.txt";
 
     ifstream file(filename);
@@ -98,7 +93,7 @@ int main()
             word = word + text[i];
 
             if (int(text[i]) >= 32 && int(text[i] <= 64)) {
-                //removePunc(&word);
+                removePunc(&word);
                 wordList.push_back(word);
                 if (frequency.find(word) != frequency.end())
                 {
@@ -111,7 +106,7 @@ int main()
 
                 updateSentenceCount(text, &i);
                 word.clear();
-                
+
             }
         }
     }
@@ -119,7 +114,12 @@ int main()
     addWord(word, &wordList);
     numberOfWords = wordList.size();
     printSummary();
-    
+
     file.close();
+}
+
+int main()
+{
+    analyseDocument();
 
 }
