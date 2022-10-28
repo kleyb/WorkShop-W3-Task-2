@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnalyseDocument.h" />
+    <ClInclude Include="WordFreqPair.h" />
     <ClInclude Include="WorkShop W3 Task 2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
