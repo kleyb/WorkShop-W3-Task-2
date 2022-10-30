@@ -18,6 +18,9 @@
     <ClCompile Include="WorkShop W3 Task 2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="WordFreqPair.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WorkShop W3 Task 2.h">

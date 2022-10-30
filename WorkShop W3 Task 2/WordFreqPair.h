@@ -16,8 +16,8 @@ public:
 											variables. Sets count to one if the second 
 											parameter is not supplied.*/
 	string getWord(); //Sets word variable with the input
-	void setWord(); //Returns word 
-	int setCount(); //Sets count variable with the input 
+	void setWord(string word); //Returns word 
+	void setCount(int count); //Sets count variable with the input 
 	int getCount(); //Set count variable with the input 
 
 private:
