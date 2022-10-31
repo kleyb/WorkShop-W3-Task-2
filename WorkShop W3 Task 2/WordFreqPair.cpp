@@ -6,8 +6,6 @@
 
 using namespace std;
 
-
-
 WordCountPair::WordCountPair() {
 	word;
 	Count = 0;
@@ -23,7 +21,7 @@ void WordCountPair::setWord(string word)
 }
 void WordCountPair::setCount(int count)
 {
-	Count = count;
+	Count += count;
 }
 int WordCountPair::getCount()
 {

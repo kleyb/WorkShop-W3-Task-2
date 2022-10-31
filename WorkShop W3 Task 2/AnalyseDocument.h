@@ -4,7 +4,8 @@
 #include<fstream>
 #include<vector>
 #include<map>
-#include"WordFreqPair.h";
+#include "WordFreqPair.h"
+
 using namespace std;
 
 class DocSummary
@@ -34,4 +35,5 @@ private:
 									vector if it does not exist in the vector. 
 									Otherwise it increases the corresponding 
 									count entry in vector. */
+	void removePunc(string* word);
 };
