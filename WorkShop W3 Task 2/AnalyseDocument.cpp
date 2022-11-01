@@ -13,8 +13,8 @@ DocSummary::DocSummary(string docName)
 
 void DocSummary::printSummary()
 {
-	cout << "Number of words: " << numberOfWords;
-	cout << "Number of sentences: " << numberOfSentences;
+	cout << "Number of words: " << numberOfWords << "\n";
+	cout << "Number of sentences: " << numberOfSentences << "\n";
 	for (int i = 0; i < wordList.size(); i++) {
 		cout << wordList[i].getWord() << " " << wordList[i].getCount();
 	}
@@ -61,14 +61,22 @@ void DocSummary::addWord(string word) {
 
 void DocSummary::analyseDocument() {
 	ifstream file(filename);
-	string text = "";
+	string text;
 	string textword;
-
-	while (getline(file, text)) {
-		textword = text.front();
+	
+	
+	while (file) {
+		file >> textword;
 		
-		increaseSentenceCount(textword);
-		removePunc(&textword);
-		addWord(textword);
+		//textword += text.front();
+		if (!textword.empty()) {
+			numberOfWords++;
+			increaseSentenceCount(textword);
+			removePunc(&textword);
+			addWord(textword);
+		}
+		
+		textword.clear();
 	}
+	file.close();
 }

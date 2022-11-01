@@ -22,7 +22,7 @@ public:
 								order to fill in the object properties*/
 
 private:
-	int numberOfWords; //is an integer that indicates the number of words in the document 
+	int numberOfWords = 0; //is an integer that indicates the number of words in the document 
 	int numberOfSentences; //is an integer that indicates the number of sentences in the document 
 	string filename; //is a string that shows the name of the document
 	vector<WordCountPair> wordList; //is a vector of WordFreqPair objects. Each entry of the vector holds 
