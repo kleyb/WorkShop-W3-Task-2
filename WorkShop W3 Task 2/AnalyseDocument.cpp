@@ -16,7 +16,7 @@ void DocSummary::printSummary()
 	cout << "Number of words: " << numberOfWords << "\n";
 	cout << "Number of sentences: " << numberOfSentences << "\n";
 	for (int i = 0; i < wordList.size(); i++) {
-		cout << wordList[i].getWord() << " " << wordList[i].getCount();
+		cout << wordList[i].getWord() << " " << wordList[i].getCount() << "\n";
 	}
 }
 
@@ -44,19 +44,20 @@ void DocSummary::removePunc(string* word) {
 }
 
 void DocSummary::addWord(string word) {
-	for (int i = 0; i < wordList.size(); i++)
-	{
-		if (wordList[i].getWord() == word) {
-			wordList[i].setCount(1);
-			break;
-		}
-		else if( wordList.begin() == wordList.end())
-		{
-			WordCountPair newOne(word, 1);
-			wordList.push_back(newOne);
-		}
-	}
 	
+		for(auto& value: wordList)
+		{
+			if (value.getWord() == word) 
+			{
+				value.setCount(1);
+				return;
+			}
+		}
+
+		WordCountPair newOne(word, 1);
+		wordList.push_back(newOne);
+		return;
+		
 }
 
 void DocSummary::analyseDocument() {
@@ -68,7 +69,6 @@ void DocSummary::analyseDocument() {
 	while (file) {
 		file >> textword;
 		
-		//textword += text.front();
 		if (!textword.empty()) {
 			numberOfWords++;
 			increaseSentenceCount(textword);
